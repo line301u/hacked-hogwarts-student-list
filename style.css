@@ -132,6 +132,10 @@ input[type="text" i] {
   margin-top: 2px;
 }
 
+::placeholder {
+  color: black;
+}
+
 /* number overwiew*/
 .numbers {
   margin-top: 200px;
@@ -300,10 +304,6 @@ input[type="text" i] {
 
   #search_field {
     width: 100%;
-  }
-
-  ::placeholder {
-    color: black;
   }
 
   #filter_sort_wrapper button {

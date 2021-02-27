@@ -31,6 +31,17 @@ let filterBy = "all";
 
 let hasBeenHacked = false;
 
+//search bar
+const searchbar = document.getElementById("search_field");
+
+searchbar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredCharacters = allStudents.filter((character) => {
+    return character.house.toLowerCase().includes(searchString) || character.firstName.toLowerCase().includes(searchString) || character.lastName.toLowerCase().includes(searchString);
+  });
+  displayList(filteredCharacters);
+});
+
 function hackTheSystem() {
   if (!hasBeenHacked) {
     hasBeenHacked = true;
