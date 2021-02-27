@@ -225,18 +225,23 @@ function showStudentList(student) {
   clone.querySelector(".student_image").addEventListener("click", () => showStudentDetails(student));
 
   //get student images
-  if (student.lastName == "Patil") {
-    clone.querySelector(".student_image").src = `student_images/${student.lastName}_${student.firstName}.png`;
-  } else if (student.lastName.includes("-")) {
-    const hyphenIndex = student.lastName.indexOf("-") + 1;
-    const fLastName = student.lastName.slice(hyphenIndex, student.lastName.lengths);
 
-    clone.querySelector(".student_image").src = `student_images/${fLastName}_${student.firstName.charAt(0)}.png`;
+  //make images file name lowercase
+  lastname = student.lastName.toLowerCase();
+  firstname = student.firstName.toLowerCase();
+
+  if (student.lastName == "Patil") {
+    clone.querySelector(".student_image").src = `student_images/${lastname}_${firstname}.png`;
+  } else if (student.lastName.includes("-")) {
+    const hyphenIndex = lastname.indexOf("-") + 1;
+    const fLastName = lastname.slice(hyphenIndex, lastname.length);
     console.log(fLastName);
+
+    clone.querySelector(".student_image").src = `student_images/${fLastName}_${firstname.charAt(0)}.png`;
   } else if (student.firstName == "Leanne" || student.firstName == "Linea") {
     clone.querySelector(".student_image").src = `student_images/undefined.png`;
   } else {
-    clone.querySelector(".student_image").src = `student_images/${student.lastName}_${student.firstName.charAt(0)}.png`;
+    clone.querySelector(".student_image").src = `student_images/${lastname}_${firstname.charAt(0)}.png`;
   }
 
   //hacked system blood status
