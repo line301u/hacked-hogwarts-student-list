@@ -1,0 +1,513 @@
+* {
+  margin: 0;
+}
+
+#header_background {
+  height: 100vh;
+  width: 100vw;
+  background-color: #181818;
+}
+
+#background_image {
+  background-image: url("img/background_image.jpeg");
+  height: 100vh;
+  width: 100vw;
+  opacity: 15%;
+}
+
+.h1_1 {
+  margin: 0 auto;
+  top: 45%;
+  left: 15vw;
+  position: absolute;
+  color: rgb(255, 247, 209);
+  font-size: 3.5rem;
+  font-family: "Playfair Display SC", serif;
+}
+
+.h1_2 {
+  top: 52%;
+  left: 35vw;
+  position: absolute;
+  color: rgb(255, 247, 209);
+  font-size: 2em;
+  font-family: "Meddon", cursive;
+  font-weight: 100;
+}
+
+body {
+  background-color: #181818;
+  overflow-x: hidden;
+}
+
+.student_name {
+  font-size: 1.8rem;
+  font-family: "Playfair Display SC", serif;
+  margin-top: 20px;
+}
+
+.student_house {
+  font-size: 1.5rem;
+  font-family: "Meddon", cursive;
+}
+
+.studentlist_buttons {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: none;
+  margin: 30px 0 30px 70px;
+}
+
+.studentlist_buttons button {
+  width: 300px;
+  height: 46px;
+  margin-bottom: 6px;
+  background-color: #a0966b;
+  border: 3.5px solid #70694b;
+  border-radius: 15%;
+  font-family: "Playfair Display SC", serif;
+  font-size: 0.85rem;
+}
+
+#filter_sort_wrapper {
+  width: 100vw;
+  font-family: "Playfair Display SC", serif;
+  position: absolute;
+  font-size: 0.85rem;
+  z-index: 1000;
+}
+
+#filter_sort_wrapper button {
+  border: none;
+  width: 100vw;
+  height: 40px;
+  font-family: "Playfair Display SC", serif;
+  font-size: 0.85rem;
+  background-color: #a0966b;
+}
+
+#filter_options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+#sort_options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+button#filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  background-color: #a0966b;
+  margin-bottom: 2px;
+}
+
+button#sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  background-color: #a0966b;
+  margin-top: 2px;
+}
+
+input[type="text" i] {
+  font-size: 1rem;
+  font-family: "Meddon", cursive;
+  width: 100%;
+  height: 48px;
+  border: none;
+  text-align: center;
+  background-color: #a0966b;
+  margin-top: 2px;
+}
+
+/* number overwiew*/
+.numbers {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  /* border-bottom: 4px solid #a0966b;
+    margin-left: 20px;
+    margin-right: 20px; */
+}
+.numbers h2 {
+  font-size: 2rem;
+  color: rgb(255, 247, 209);
+  font-family: "Meddon", cursive;
+}
+
+.numbers p {
+  font-size: 1.5rem;
+  color: rgb(255, 247, 209);
+  font-family: "Meddon", cursive;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+#studentlist_container {
+  margin: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+  text-align: center;
+  color: rgb(255, 247, 209);
+}
+
+.student_image {
+  height: 300px;
+  width: 300px;
+}
+
+#student_popup_gryffindor {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895) 60%, rgb(66, 15, 15));
+  color: rgb(255, 247, 209);
+  font-family: "Playfair Display SC", serif;
+  font-weight: 100;
+
+  position: fixed;
+  top: 0;
+}
+
+#student_popup_hufflepuff {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895) 60%, rgb(143, 128, 45));
+  color: rgb(255, 247, 209);
+  font-family: "Playfair Display SC", serif;
+  font-weight: 100;
+
+  position: fixed;
+  top: 0;
+}
+
+#student_popup_ravenclaw {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: rgba(0, 0, 0, 0.815); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895) 60%, rgb(31, 51, 105));
+  color: rgb(255, 247, 209);
+  font-family: "Playfair Display SC", serif;
+  font-weight: 100;
+
+  position: fixed;
+  top: 0;
+}
+
+#student_popup_slytherin {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.895) 60%, rgb(28, 56, 19));
+  color: rgb(255, 247, 209);
+  font-family: "Playfair Display SC", serif;
+  font-weight: 100;
+
+  position: fixed;
+  top: 0;
+}
+
+.popup_sectionwrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_image {
+  flex-direction: column;
+}
+
+.popup_info {
+  flex-direction: column;
+}
+
+.student_image_popup {
+  height: 200px;
+  width: 200px;
+}
+
+.house_icon {
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Meddon", cursive;
+  padding-right: 20px;
+}
+
+.close_button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 247, 209);
+  font-size: 2rem;
+}
+
+#student_popup_gryffindor .house_icon {
+  color: rgb(119, 28, 28);
+}
+
+#student_popup_hufflepuff .house_icon {
+  color: rgb(173, 156, 55);
+}
+
+#student_popup_ravenclaw .house_icon {
+  color: rgb(45, 73, 148);
+}
+
+#student_popup_slytherin .house_icon {
+  color: rgb(57, 112, 38);
+}
+
+@media only screen and (min-width: 900px) {
+  #filter_sort_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  #filter_wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #sort_wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #search_field {
+    width: 100%;
+  }
+
+  ::placeholder {
+    color: black;
+  }
+
+  #filter_sort_wrapper button {
+    border: none;
+    width: 100%;
+    font-family: "Playfair Display SC", serif;
+  }
+  #filter {
+    width: 100%;
+  }
+
+  #sort {
+    width: 100%;
+  }
+
+  #studentlist_container {
+    margin: 80px 40px;
+  }
+
+  .numbers {
+    margin-top: 120px;
+  }
+
+  button#filter {
+    margin-bottom: 0;
+  }
+
+  button#sort {
+    margin-top: 0;
+  }
+
+  input[type="text" i] {
+    margin-top: 0;
+  }
+
+  .popup_sectionwrapper {
+    flex-direction: row;
+  }
+
+  .popup_info {
+    margin-left: 40px;
+  }
+
+  .close_button {
+    position: absolute;
+    top: 20vh;
+    right: 25vw;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .h1_1 {
+    top: 32%;
+    left: 15%;
+    position: absolute;
+    color: rgb(255, 247, 209);
+    font-size: 9rem;
+    font-family: "Playfair Display SC", serif;
+  }
+
+  .h1_2 {
+    top: 49%;
+    left: 40%;
+    position: absolute;
+    color: rgb(255, 247, 209);
+    font-size: 5rem;
+    font-family: "Meddon", cursive;
+    font-weight: 100;
+  }
+}
+
+/*dialog*/
+
+#onlytwoofeachhouse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.925);
+  width: 100vw;
+  height: 100vh;
+}
+
+#cannotBeMember {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.925);
+  width: 100vw;
+  height: 100vh;
+}
+
+#cantExpel {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.925);
+  width: 100vw;
+  height: 100vh;
+}
+
+.dialogcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  margin: 0 auto;
+  width: 70vw;
+  height: 100vh;
+}
+
+.dialogcontent h1 {
+  font-size: 1.8rem;
+  color: rgb(255, 247, 209);
+  font-family: "Playfair Display SC", serif;
+}
+
+.dialogcontent h2 {
+  font-size: 1.8rem;
+  font-family: "Playfair Display SC", serif;
+  color: rgb(255, 247, 209);
+}
+
+.remove1,
+.remove2 {
+  width: 300px;
+  height: 46px;
+  margin-bottom: 6px;
+  background-color: #a0966b;
+  border: 3.5px solid #70694b;
+  border-radius: 15%;
+  font-family: "Playfair Display SC", serif;
+  font-size: 0.85rem;
+}
+
+.remove1 {
+  margin-top: 40px;
+}
+
+.dialogcontent .closebutton {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 247, 209);
+  font-size: 2rem;
+}
+
+/* shake */
+
+@keyframes shake_kf {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-1px, 0px) rotate(0.7deg);
+  }
+
+  30% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(0.2deg);
+  }
+
+  50% {
+    transform: translate(-1px, 1px) rotate(-01deg);
+  }
+
+  60% {
+    transform: translate(-1px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(2px, 1px) rotate(-0.4deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(0.4deg);
+  }
+
+  90% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(0deg);
+  }
+}
+
+.shake {
+  animation-name: shake_kf;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}

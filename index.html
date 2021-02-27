@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hogwarts Student List</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Meddon&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <header>
+    <div id="header_background">
+        <div id="background_image"></div>
+      <div id="header_typo">
+        <h1 class="h1_1">Hogwarts</h1>
+        <h1 class="h1_2">Student List<h1>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <nav>
+      <div id="filter_sort_wrapper">
+        <div id="filter_wrapper">
+          <button id="filter">Filter ↓</button>
+        <div id="filter_options" class="hidden">
+          <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindorr</button>
+          <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+          <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+          <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+          <button class="filter" data-action="filter" data-filter="expelled">Expelled</button>
+          <button class="filter" data-action="filter" data-filter="non_expelled">Non_expelled</button>
+          <button class="filter" data-action="filter" data-filter="squad_member">Inquisitorial Squad member</button>
+          <button class="filter" data-action="filter" data-filter="all">All</button>
+        </div>
+        </div>
+        
+
+        <div id="sort_wrapper">
+        <button id="sort">Sort ↓</button>
+        <div id="sort_options" class="hidden">
+          <button class="sort" data-action="sort" data-sort="firstname">Firstname</button>
+          <button class="sort" data-action="sort" data-sort="lastname">Lastname</button>
+          <button class="sort" data-action="sort" data-sort="house">House</button>
+        </div>
+      </div>
+
+        <div id="search_field">
+          <input type="text" placeholder="Search..    &#x1F50D">
+        </div>
+        
+      </div>
+
+
+    </nav>
+
+    <main>
+
+        <div class="numbers">
+          <h2>student displayed</h2>
+          <p data-field="studentsDisplayedNumber"></p>
+        </div>
+  
+
+      <section id="studentlist_container">
+      </section>
+      
+        <template>
+          <article id="template-article">
+            <div id="template-wrapper">
+              <div>
+            <img class="student_image" src="" alt="" />
+          </div>
+         
+            <h2 class="student_name"></h2>
+            <p class="student_house"></p>
+            <div class= "studentlist_buttons">
+            <button data-field="expel_button" type="button">Expel</button>
+            <button data-field="prefect_button" type="button">Add as prefect</button>
+            <button data-field="squad_button" type="button">Add as member</button>
+          </div>
+        
+          </div>
+          </article>
+        </template>
+      
+
+
+      <section id="student_popup_gryffindor" class="hidden">
+        <article>
+            <button class="close_button close_button_gryffindor">x</button>
+            <div class="popup_sectionwrapper">
+              <div class= "popup_image">
+                <img class="student_image_popup" src="" alt="" />
+                <h2 class="house_icon">G</h2>
+              </div>
+              <div class="popup_info">
+                    <h2>Fullname: <span class="student_fullname"></span></p>
+                    <p>Firstname: <span class="student_firstname"></span></p>
+                    <p>Middlename: <span class="student_middlename"></span></p>
+                    <p>Lastname: <span class="student_lastname"></span></p>
+                    <p>House Crest: <span class="house_crest"></span></p>
+                    <p>Blood status: <span class="blood_status"></span></p>
+                    <p class="prefect" data-field="false"> Is not a prefect</p>
+                    <p class="expelled"></p>
+                    <p class="inquisitorial_squad"></p>
+                  </div>
+            </div>
+        </article>
+        </section>
+
+        <section id="student_popup_hufflepuff" class="hidden">
+          <article>
+              <button class="close_button close_button_hufflepuff">x</button>
+              <div class="popup_sectionwrapper">
+                <div class= "popup_image">
+                  <img class="student_image_popup" src="" alt="" />
+                  <h2 class="house_icon">H</h2>
+                </div>
+                <div class="popup_info">
+                      <h2>Fullname: <span class="student_fullname"></span></p>
+                      <p>Firstname: <span class="student_firstname"></span></p>
+                      <p>Middlename: <span class="student_middlename"></span></p>
+                      <p>Lastname: <span class="student_lastname"></span></p>
+                      <p>House Crest: <span class="house_crest"></span></p>
+                      <p>Blood status: <span class="blood_status"></span></p>
+                      <p class="prefect" data-field="false"> Is not a prefect</p>
+                      <p class="expelled"></p>
+                      <p class="inquisitorial_squad"></p>
+                      </div>
+  
+              </div>
+          </article>
+          </section>
+
+          <section id="student_popup_ravenclaw" class="hidden">
+            <article>
+                <button class="close_button close_button_ravenclaw">x</button>
+                <div class="popup_sectionwrapper">
+                  <div class= "popup_image">
+                    <img class="student_image_popup" src="" alt="" />
+                    <h2 class="house_icon">R</h2>
+                    </div>
+                    <div class="popup_info">
+                        <h2>Fullname: <span class="student_fullname"></span></p>
+                        <p>Firstname: <span class="student_firstname"></span></p>
+                        <p>Middlename: <span class="student_middlename"></span></p>
+                        <p>Lastname: <span class="student_lastname"></span></p>
+                        <p>House Crest: <span class="house_crest"></span></p>
+                        <p>Blood status: <span class="blood_status"></span></p>
+                        <p class="prefect" data-field="false"> Is not a prefect</p>
+                        <p class="expelled"></p>
+                        <p class="inquisitorial_squad"></p>
+                        </div>
+                </div>
+            </article>
+            </section>
+
+
+          <section id="student_popup_slytherin" class="hidden">
+            <article>
+                <button class="close_button close_button_slytherin">x</button>
+                <div class="popup_sectionwrapper">
+                  <div class= "popup_image">
+                    <img class="student_image_popup" src="" alt="" />
+                    <h2 class="house_icon">S</h2>
+                    </div>
+                    <div class="popup_info">
+                        <h2>Fullname: <span class="student_fullname"></span></p>
+                        <p>Firstname: <span class="student_firstname"></span></p>
+                        <p>Middlename: <span class="student_middlename"></span></p>
+                        <p>Lastname: <span class="student_lastname"></span></p>
+                        <p>House Crest: <span class="house_crest"></span></p>
+                        <p>Blood status: <span class="blood_status"></span></p>
+                        <p class="prefect" data-field="false"> Is not a prefect</p>
+                        <p class="expelled"></p>
+                        <p class="inquisitorial_squad"></p>
+                        </div>
+                </div>
+            </article>
+            </section>
+
+
+    <!-- Dialogs for handling too many winners -->
+
+    <div id="onlytwoofeachhouse" class="hidden">
+      <div class="dialogcontent">
+        <button class="closebutton">x</button>
+        <h1>Only two students of the same house can be a prefect</h1>
+        <h2>Remove one before you appoint more</h2>
+        <p><button class="remove1">remove</button> <span class="student1"></span></p>
+        <p><button class="remove2">remove</button> <span class="student2"></span></p>
+      </div>
+    </div>
+
+    <div id="cannotBeMember" class="hidden">
+      <div class="dialogcontent">
+        <button class="closebutton">x</button>
+        <h1>Only pure-blood or students from Slytherin can be appointed as members of the Inquisitorial Squad </h1>
+      </div>
+    </div>
+
+    <div id="cantExpel" class="hidden">
+      <div class="dialogcontent">
+        <button class="closebutton">x</button>
+        <h1>You can't expell this student</h1>
+      </div>
+    </div>
+
+        
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
